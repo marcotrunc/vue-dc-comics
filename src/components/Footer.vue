@@ -117,7 +117,7 @@ export default {
 // ** LIST FOOTER
 @import "../assets/sass/_vars.scss";
 #list-footer {
-  padding: 25px 0;
+  padding: 35px 0;
   display: flex;
   justify-content: start;
   color: white;
@@ -130,11 +130,12 @@ export default {
   }
   ul li {
     list-style-type: none;
-    font-size: 0.7rem;
-    color: grey;
+    font-size: 0.8rem;
+    margin: 5px 0;
     a {
       text-decoration: none;
       color: grey;
+      margin: 10px 0;
     }
   }
 }
@@ -159,13 +160,13 @@ export default {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 20px 0px;
+  padding: 35px 0px;
 }
 #sign a,
 #social a {
   text-transform: uppercase;
-  padding: 5px 15px;
-  font-size: 0.75rem;
+  padding: 10px 20px;
+  font-size: 1rem;
   text-decoration: none;
 }
 #sign a {
@@ -181,7 +182,7 @@ export default {
   }
   ul li {
     display: inline-block;
-    width: 25px;
+    width: 35px;
     margin: 0 5px;
   }
 }
