@@ -8,16 +8,13 @@
       </div>
       <div id="header-right">
         <ul>
-          <li><a href="#">Characters</a></li>
-          <li><a href="#" class="active">Comics</a></li>
-          <li><a href="#">Movies</a></li>
-          <li><a href="#">TV</a></li>
-          <li><a href="#">Games</a></li>
-          <li><a href="#">Collectibles</a></li>
-          <li><a href="#">Videos</a></li>
-          <li><a href="#">Fans</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Shop</a></li>
+          <li
+            v-for="(link, index) in headLinks"
+            :key="index"
+            @click="setActive(link)"
+          >
+            <a href="#" :class="{ active: link.active }">{{ link.text }}</a>
+          </li>
         </ul>
       </div>
     </header>
@@ -27,6 +24,33 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      headLinks: [
+        { text: "Characters", url: "#", active: false },
+        { text: "Comics", url: "#", active: false },
+        { text: "Movies", url: "#", active: false },
+        { text: "TV", url: "#", active: false },
+        { text: "Games", url: "#", active: false },
+        { text: "Collectibles", url: "#", active: false },
+        { text: "Videos", url: "#", active: false },
+        { text: "Fans", url: "#", active: false },
+        { text: "News", url: "#", active: false },
+        { text: "Shop", url: "#", active: false },
+      ],
+    };
+  },
+  methods: {
+    setActive(link) {
+      if (link.active === false) {
+        console.log("ciao");
+        this.headLinks.map((item) => {
+          item.active = false;
+        });
+        link.active = true;
+      }
+    },
+  },
 };
 </script>
 
@@ -53,8 +77,7 @@ header {
       padding: 30px 0;
       color: black;
       font-size: 0.7rem;
-      &:hover,
-      &:active {
+      &:hover {
         color: $color_blue;
         border-bottom: 3px solid $color_blue;
       }
