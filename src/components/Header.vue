@@ -58,6 +58,7 @@ export default {
 @import "../assets/sass/_vars.scss";
 header {
   padding: 10px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;

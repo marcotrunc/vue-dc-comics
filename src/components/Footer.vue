@@ -1,5 +1,6 @@
 <template>
   <footer class="container-fluid">
+    <!-- Top footer -->
     <section id="footer-top">
       <div class="container flex">
         <div id="list-footer">
@@ -42,6 +43,7 @@
         </div>
       </div>
     </section>
+    <!-- Footer bottom -->
     <section id="footer-bottom">
       <div class="container flex align-items-center h-100">
         <div id="sign">
@@ -156,10 +158,6 @@ export default {
 // **FOOTER BOTTOM
 #footer-bottom {
   background-color: $bg-grey;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   padding: 35px 0px;
 }
 #sign a,

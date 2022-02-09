@@ -1,5 +1,5 @@
 <template>
-  <div class="h-100v">
+  <div>
     <Header />
     <Main />
     <Footer />
