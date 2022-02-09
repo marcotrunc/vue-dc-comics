@@ -29,22 +29,22 @@ export default {
           text: "DIGITALS COMICS",
         },
         {
-          src: "buy-comics-merchandise.png",
+          url: "buy-comics-merchandise.png",
           alt: "DC maerchandise",
           text: "DC MERCHANDISE",
         },
         {
-          src: "buy-comics-subscriptions.png",
+          url: "buy-comics-subscriptions.png",
           alt: "subscriptions",
           text: "SUBSCRIPTIONS",
         },
         {
-          src: "buy-comics-shop-locator.png",
+          url: "buy-comics-shop-locator.png",
           alt: "shop locator",
           text: "COMIC SHOP LOCATOR",
         },
         {
-          src: "buy-dc-power-visa.svg",
+          url: "buy-dc-power-visa.svg",
           alt: "DC power",
           text: "DC POWER",
         },

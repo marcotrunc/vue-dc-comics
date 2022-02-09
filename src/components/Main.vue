@@ -1,10 +1,9 @@
 <template>
   <main class="container-fluid">
+    <Jumbotron />
     <!-- Main top -->
     <section id="main-top">
-      <div class="container">
-        <p>-->Content goes here--></p>
-      </div>
+      <Maintop :series-list="seriesList" />
     </section>
     <!-- Main Bottom -->
     <section id="main-bottom">
@@ -14,12 +13,17 @@
 </template>
 
 <script>
+import Maintop from "./Maintop.vue";
 import Mainbottom from "./Mainbottom.vue";
+import Jumbotron from "./Jumbotron.vue";
 export default {
   name: "Main",
   components: {
+    Jumbotron,
+    Maintop,
     Mainbottom,
   },
+  props: ["seriesList"],
 };
 </script>
 
@@ -28,16 +32,6 @@ export default {
 // ** Main-top
 #main-top {
   background-color: $bg-black;
-}
-#main-top .container {
-  display: flex;
-  align-content: center;
-  padding: 40px 0px;
-  p {
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
 }
 // ** Main-bottom
 #main-bottom {

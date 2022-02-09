@@ -44,32 +44,17 @@
       </div>
     </section>
     <!-- Footer bottom -->
-    <section id="footer-bottom">
-      <div class="container flex align-items-center h-100">
-        <div id="sign">
-          <a href="#">sign-up now!</a>
-        </div>
-        <div id="social">
-          <a href="#">Follow Us</a>
-          <ul>
-            <li v-for="(img, index) in socialimages" :key="index">
-              <a href="#">
-                <img
-                  :src="require(`../assets/img/footer-${img.url}.png`)"
-                  :alt="`${img.url}`"
-                />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <Footerbottom :socialimages="socialimages" />
   </footer>
 </template>
 
 <script>
+import Footerbottom from "./Footerbottom.vue";
 export default {
   name: "Footer",
+  components: {
+    Footerbottom,
+  },
   data() {
     return {
       listlinks: [
@@ -151,37 +136,8 @@ export default {
 }
 #logo-footer img {
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
-  transform: translateY(-30%);
-}
-// **FOOTER BOTTOM
-#footer-bottom {
-  background-color: $bg-grey;
-  padding: 35px 0px;
-}
-#sign a,
-#social a {
-  text-transform: uppercase;
-  padding: 10px 20px;
-  font-size: 1rem;
-  text-decoration: none;
-}
-#sign a {
-  color: #ffffff;
-  border: 2px solid #0282f9;
-}
-#social {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  a {
-    color: #0282f9;
-  }
-  ul li {
-    display: inline-block;
-    width: 35px;
-    margin: 0 5px;
-  }
+  transform: translate(0, -50%);
 }
 </style>
