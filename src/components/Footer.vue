@@ -1,45 +1,21 @@
 <template>
   <footer class="container-fluid">
     <!-- Top footer -->
-    <section id="footer-top">
-      <div class="container flex">
-        <div id="list-footer">
-          <div class="col">
-            <h4>Dc Comics</h4>
-            <ul>
-              <li v-for="(link, index) in listlinks" :key="index">
-                <a href="link.url"> {{ link.text }}</a>
-              </li>
-            </ul>
-            <h4>Shop</h4>
-            <ul>
-              <li><a href="#">Shop DC</a></li>
-              <li><a href="#">Shop DC Collectibles</a></li>
-            </ul>
+    <section id="footer-top" class="container-fluid py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <Footerlist
+              :list-links="listlinks"
+              :dc-links="dclinks"
+              :sites-list="siteslist"
+            />
           </div>
-          <div class="col">
-            <h4>DC</h4>
-            <ul>
-              <li v-for="(link, index) in dclinks" :key="index">
-                <a :href="link.url">{{ link.text }}</a>
-              </li>
-            </ul>
+          <div class="col-6">
+            <div id="logo-footer">
+              <img src="../assets/img/dc-logo-bg.png" alt="Logo" />
+            </div>
           </div>
-          <div class="col">
-            <h4>SITES</h4>
-            <ul>
-              <li><a href="#">DC</a></li>
-              <li><a href="#">MAD Magazine</a></li>
-              <li><a href="#">DC Kids</a></li>
-              <li><a href="#">DC Universe</a></li>
-              <li><a href="#">DC Power Visa</a></li>
-            </ul>
-          </div>
-        </div>
-        <div id="logo-footer">
-          <figure>
-            <img src="../assets/img/dc-logo-bg.png" alt="Logo" />
-          </figure>
         </div>
       </div>
     </section>
@@ -49,11 +25,13 @@
 </template>
 
 <script>
+import Footerlist from "./Footerlist.vue";
 import Footerbottom from "./Footerbottom.vue";
 export default {
   name: "Footer",
   components: {
     Footerbottom,
+    Footerlist,
   },
   data() {
     return {
@@ -79,6 +57,14 @@ export default {
         { text: "Shop Help", url: "#" },
         { text: "Contact us", url: "#" },
       ],
+      siteslist: [
+        { text: "DC", url: "#" },
+        { text: "MAD Magazine", url: "#" },
+        { text: "DC kids", url: "#" },
+        { text: "DC Universe", url: "#" },
+        { text: "DC Power Visa", url: "#" },
+      ],
+
       socialimages: [
         { url: "facebook" },
         { url: "twitter" },
@@ -97,47 +83,15 @@ export default {
   background-image: url("../assets/img/footer-bg.jpg");
   overflow: hidden;
 }
-.flex {
-  display: flex;
-  justify-content: space-between;
-}
-// ** LIST FOOTER
-@import "../assets/sass/_vars.scss";
-#list-footer {
-  padding: 35px 0;
-  display: flex;
-  justify-content: start;
-  color: white;
-}
-.col {
-  padding-right: 15px;
-  h4 {
-    margin: 10px 0px;
-    text-transform: uppercase;
-  }
-  ul li {
-    list-style-type: none;
-    font-size: 0.8rem;
-    margin: 5px 0;
-    a {
-      text-decoration: none;
-      color: grey;
-      margin: 10px 0;
-    }
-  }
-}
 // ** LOGO FOOTER
 #logo-footer {
-  width: 40%;
   position: relative;
-  figure {
-    overflow: hidden;
-  }
+  height: 100%;
 }
 #logo-footer img {
   position: absolute;
   top: 50%;
   right: 0;
-  transform: translate(0, -50%);
+  transform: translateY(-50%);
 }
 </style>
